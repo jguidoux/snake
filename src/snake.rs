@@ -6,7 +6,7 @@ use crate::draw;
 
 const SNAKE_COLOR: Color = [0.00, 0.80, 0.0, 1.0];
 
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, PartialEq)]
 pub enum Direction {
     Up,
     Down,
@@ -18,7 +18,7 @@ impl Direction {
     pub fn opposite(&self) -> Direction {
         match &self {
             Direction::Up => Direction::Down,
-            Direction::Down => Direction::Left,
+            Direction::Down => Direction::Up,
             Direction::Right => Direction::Left,
             Direction::Left => Direction::Right,
         }
